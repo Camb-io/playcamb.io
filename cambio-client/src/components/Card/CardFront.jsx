@@ -1,23 +1,15 @@
 import React from 'react'
 
-const CardFront = (props) => {
-  const card = {
-    rank: 10,
-    suit: "&hearts;"
-  }
-
+const CardFront = ({suit, rank}) => {
   return (
     <div className="card front">
-      <div className="top">
-        <span className="rank">{card.rank}</span>
-        <span className="suit">{card.suit}</span>
+      <div className={`top ${suit}`}>
+        {rank}
       </div>
-      <div className="middle">
-        <span className="suit">{card.suit}</span>
+      <div className={`middle ${suit}`}>
       </div>
-      <div className="bottom">
-        <span className="rank">{card.rank}</span>
-        <span className="suit">{card.suit}</span>
+      <div className={`bottom ${suit}`}>        
+        {rank}
       </div>
     </div>
   )
