@@ -4,8 +4,15 @@ import {
 } from './types'
 
 const initialState = {
+    loading: false,
+    currentUser: null,
+    activePlayer: null,
     players: null,
-    loading: false
+    currentDiscardTop: null,
+    drawnCard: null,
+    matchable: false,
+    gameEnding: false,
+    gifting: false,
 }
 
 const reducerActions = {
