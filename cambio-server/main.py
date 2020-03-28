@@ -17,11 +17,12 @@ def create_new_table():
     pass
 
 
-@ws.route("/echo")
-def echo_socket(socket):
+@ws.route("/<cambio_table_id>/chat")
+def echo_socket(socket, cambio_table_id):
     while not socket.closed:
         message = socket.receive()
-        socket.send(message)
+        new_message = message + cambio_table_id
+        socket.send(new_message)
 
 
 app = Flask(__name__)
