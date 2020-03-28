@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CardBack = ({ card }) => {
+const CardBack = () => {
 
   return (
     <div className="card back">
