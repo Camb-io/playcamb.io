@@ -6,16 +6,19 @@ import * as boardActions from '../../store/board/actions'
 const Board = (props) => {
   const dispatch = useDispatch()
   const beef = useSelector(boardSelectors.getBeef)
-  
+
   const handleClick = () => {
     dispatch(boardActions.setBeef("Delish"))
   }
 
 
   return (
-    <div>
-      {beef}
-      <button className="board-button" onClick={handleClick} >click me</button>
+    <div className="full-board">
+      <div className="top-players"></div>
+      <div className="deck-area"></div>
+      <div className="bottom-players">
+        <div className="current-user"></div>
+      </div>
     </div>
   )
 }
