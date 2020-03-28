@@ -3,9 +3,9 @@
   border-style: solid;
   border-color: $standard-player-area;
   display: grid;
-    grid-template-columns: 32.33% 32.33% 32.33%;
+  grid-template-columns: 31.33% 31.33% 31.33%;
   grid-auto-rows: 100%;
-  grid-gap: 1.5%;
+  grid-gap: 3%;
   grid-template-areas:
     "playertwo"
     "currentuser"
