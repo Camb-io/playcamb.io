@@ -1,5 +1,7 @@
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, jsonify, request
 from flask_sockets import Sockets
+from models import Player, CambioTable
+import uuid
 
 
 html = Blueprint(r"html", __name__)
@@ -14,7 +16,17 @@ def hello():
 
 @html.route("/create-cambio-table", methods=["POST"])
 def create_new_table():
-    pass
+    player_name = request.get_json("name")
+    table_id = str(uuid.uuid4().hex)
+    player_id = str(uuid.uuid4().hex)
+    table_admin = player_id
+    table = CambioTable(
+        table_id, table_admin, player_id, url_suffix=f"table-{table_id}"
+    )
+    if table_id not in TABLES:
+        TABLES[table_id] = table
+    player = Player(name=player_name, pid=player_id)
+    return jsonify(table_id, table_admin, player.__dict__())
 
 
 @ws.route("/echo")
