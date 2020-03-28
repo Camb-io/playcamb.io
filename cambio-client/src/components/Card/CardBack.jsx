@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CardFront = ({ card }) => {
+const CardBack = ({ card }) => {
 
   return (
     <div className="card back">
@@ -9,4 +9,4 @@ const CardFront = ({ card }) => {
   )
 }
 
-export default CardFront
+export default CardBack
