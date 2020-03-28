@@ -2,6 +2,7 @@ import { players as allPlayers, deck } from './data'
 
 const mockFetch = (url, options) => {
   return new Promise((resolve, reject) => {
+    // define routes (TODO: add verbs?)
     const router = () => {
       switch (url) {
         case "/deal":
@@ -11,8 +12,7 @@ const mockFetch = (url, options) => {
       }
     }
 
-    setTimeout(router, 500)
-
+    // controller actions
     const deal = () => {
       const players = allPlayers.reduce((playerObj, player) => {
         playerObj[player] = {
@@ -31,8 +31,10 @@ const mockFetch = (url, options) => {
       })
     }
 
-    const error = () => resolve({
-      status: 400, text: "woops!"
+    const error = () => respond({
+      ok: false,
+      status: 400,
+      data: { message: "woops!" }
     })
 
     // helpers
@@ -48,6 +50,8 @@ const mockFetch = (url, options) => {
       })
     }
 
+    // initiate request
+    setTimeout(router, 500)
   })
 }
 
