@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import boardReducer from './board/reducer'
-import playersReducer from './player/reducer'
+import playersReducer from './players/reducer'
 
 const rootReducer = combineReducers({
   board: boardReducer,

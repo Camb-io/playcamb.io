@@ -1,1 +1,1 @@
-export const getBeef = ({ board: { beef } }) => beef
+export const getPlayers = ({ board: { players } }) => players

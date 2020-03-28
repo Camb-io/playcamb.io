@@ -1,22 +1,31 @@
 import {
-    SET_BEEF
+    START_GAME,
+    STARTING_GAME
 } from './types'
 
 const initialState = {
-    beef: "Yum"
+    players: null,
+    loading: false
 }
 
 const reducerActions = {
-    [SET_BEEF](state, action){
+    [START_GAME](state, action) {
         return {
             ...state,
-            beef: action.payload
+            players: action.payload,
+            loading: false
         }
-    } 
+    },
+    [STARTING_GAME](state) {
+        return {
+            ...state,
+            loading: true
+        }
+    }
 }
 
-const boardReducer = (state = initialState, action) => {
+const playersReducer = (state = initialState, action) => {
     return reducerActions[action.type] ? reducerActions[action.type](state, action) : state
 }
 
-export default boardReducer
+export default playersReducer

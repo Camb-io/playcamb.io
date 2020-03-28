@@ -1,1 +1,2 @@
-export const SET_BEEF = "@@board/SET_BEEF"
+export const START_GAME = "@@board/START_GAME"
+export const STARTING_GAME = "@@board/STARTING_GAME"

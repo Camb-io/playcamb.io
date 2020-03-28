@@ -1,6 +1,15 @@
 import { action } from 'typesafe-actions'
+import { mockFetch } from '../../mocks/fetch'
 import {
-    SET_BEEF
+    START_GAME,
+    STARTING_GAME
 } from './types'
 
-export const setBeef = (data) => action(SET_BEEF, data)
+export const startGame = () => dispatch => {
+    dispatch(action(STARTING_GAME))
+
+    mockFetch("/deal")
+        .then(({ players }) => {
+            dispatch(action(START_GAME, players))
+        })
+}
