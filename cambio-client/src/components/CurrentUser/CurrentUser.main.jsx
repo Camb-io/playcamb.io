@@ -1,5 +1,5 @@
 import React from 'react';
-import Hand from '../Hand/Hand.main'
+import { Hand } from '../Hand'
 
 const CurrentUser = () => {
 

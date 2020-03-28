@@ -2,15 +2,10 @@
   display: flex;
 }
 
-<<<<<<< HEAD
+
 .cards {
   flex: 2 1 auto;
   grid-template-areas:
-=======
-.cards { 
-  flex: 2 1 auto;
-  grid-template-areas: 
->>>>>>> game-ui
     "c c"
     "c c";
   border: 2px solid blue;
@@ -18,11 +13,7 @@
 
 .penalty {
   flex: 1 1 auto;
-<<<<<<< HEAD
   grid-template-areas:
-=======
-  grid-template-areas: 
->>>>>>> game-ui
     "p"
     "p";
   border: 2px solid red;
@@ -38,19 +29,10 @@
 
 // hard coded for now, should be moved to Card component
 .card {
-<<<<<<< HEAD
   width: 4em;
   height: 6em;
-=======
-  width: 120px;
-  height: 200px;
->>>>>>> game-ui
   border-radius: 10px;
   text-align: center;
   background-color: lightgray;
   border: 2px solid black;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> game-ui

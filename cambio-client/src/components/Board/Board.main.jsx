@@ -2,9 +2,9 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import * as boardSelectors from '../../store/board/selectors'
 import * as boardActions from '../../store/board/actions'
-import TopPlayers from '../TopPlayers/TopPlayers.main'
-import Decks from '../Decks/Decks.main'
-import BottomPlayers from '../BottomPlayers/BottomPlayers.main'
+import { TopPlayers } from '../TopPlayers'
+import { Decks } from '../Decks'
+import { BottomPlayers } from '../BottomPlayers'
 
 
 const Board = (props) => {
