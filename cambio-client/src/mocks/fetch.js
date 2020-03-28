@@ -2,8 +2,6 @@ import { players as allPlayers, deck } from './data'
 
 const mockFetch = (url, options) => {
   return new Promise((resolve, reject) => {
-    setTimeout(router, 500)
-
     const router = () => {
       switch (url) {
         case "/deal":
@@ -12,6 +10,8 @@ const mockFetch = (url, options) => {
           return error()
       }
     }
+
+    setTimeout(router, 500)
 
     const deal = () => {
       const players = allPlayers.reduce((playerObj, player) => {
