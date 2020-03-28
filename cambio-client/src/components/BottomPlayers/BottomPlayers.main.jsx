@@ -1,13 +1,13 @@
 import React from 'react';
+import CurrentUser from '../CurrentUser/CurrentUser.main'
+
 
 const BottomPlayers = () => {
 
   return (
     <div className="bottom-players">
       <p>one day i will be the individual player components and i need logic later on how to render different numbers of players</p>
-      <div className="current-user">
-        <p>current user goes here</p>
-      </div>
+      <CurrentUser />
     </div>
   )
 
