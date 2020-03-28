@@ -1,2 +1,9 @@
 @import 'variables.scss';
-@import '../components/Board/styles.scss'
+@import '../components/Board/styles.scss';
+@import '../components/Table/styles.scss';
+@import '../components/Chat/styles.scss';
+
+
+.app-container {
+  height: 90vh;
+}
