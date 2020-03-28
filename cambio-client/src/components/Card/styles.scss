@@ -1,7 +1,23 @@
-.card-front {
+.card {
+  width: 120px;
+  height: 200px;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: center;
 
-}
+  &.front {
+    .top {
 
-.card-back {
-  
+    }
+    .middle {
+
+    }
+    .bottom {
+      
+    }
+  }
+
+  &.back {
+    background-color: lightgray;
+  }
 }
