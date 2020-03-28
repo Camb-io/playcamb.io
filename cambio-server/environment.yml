@@ -43,5 +43,7 @@ dependencies:
   - wheel=0.34.2=py38_0
   - xz=5.2.4=h1de35cc_4
   - zlib=1.2.11=h1de35cc_3
+  - pip:
+    - pydealer==1.4.0
 prefix: /Users/rangat/opt/miniconda3/envs/cambio
 
