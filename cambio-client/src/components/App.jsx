@@ -1,10 +1,11 @@
 import React from 'react';
-import { Board } from './Board'
+import { Hand } from './Hand'
 
 function App() {
   return (
     <div className="App">
-      <Board />
+      <Hand />
+      <Hand />
     </div>
   );
 }
