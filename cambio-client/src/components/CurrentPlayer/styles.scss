@@ -1,5 +1,8 @@
-.current-user {
+.current-player {
   border-width: 1px;
   border-style: solid;
   border-color: blue;
+  display: grid;
+  grid-template-rows: auto 10%;
+  grid-gap: 3%;
 }

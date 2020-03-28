@@ -1,14 +1,16 @@
 import React from 'react';
 import { Hand } from '../Hand'
+import { CurrentPlayerControls } from '../CurrentPlayerControls'
 
-const CurrentUser = () => {
+const CurrentPlayer = () => {
 
   return (
-    <div className="current-user">
+    <div className="current-player">
       <Hand />
+      <CurrentPlayerControls/>
     </div>
   )
 
 }
 
-export default CurrentUser;
+export default CurrentPlayer;
