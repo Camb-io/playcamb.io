@@ -4,7 +4,9 @@ const TopPlayers = () => {
 
   return (
     <div className="top-players">
-      <p>one day i will be the individual player components and i need logic later on how to render different numbers of players</p>
+      <div className="player-three">player 3</div>
+      <div className="player-four">player 4</div>
+      <div className="player-five">player 5</div>
     </div>
   )
 
