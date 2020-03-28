@@ -24,14 +24,29 @@ const mockFetch = (url, options) => {
         return playerObj
       }, {})
 
-      return resolve({
-        players
+      return respond({
+        ok: true,
+        status: 200,
+        data: { players }
       })
     }
 
     const error = () => resolve({
       status: 400, text: "woops!"
     })
+
+    // helpers
+    const respond = ({ ok, status, data }) => {
+      const body = JSON.stringify(data)
+      resolve({
+        ok,
+        status,
+        body,
+        json() {
+          return new Promise((resolve) => resolve(JSON.parse(body)))
+        }
+      })
+    }
 
   })
 }
