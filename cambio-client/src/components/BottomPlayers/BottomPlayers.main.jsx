@@ -1,5 +1,5 @@
 import React from 'react';
-import { CurrentUser } from '../CurrentUser'
+import { CurrentPlayer } from '../CurrentPlayer'
 
 
 const BottomPlayers = () => {
@@ -7,7 +7,7 @@ const BottomPlayers = () => {
   return (
     <div className="bottom-players">
       <div className="player-two">player 2</div>
-      <CurrentUser />
+      <CurrentPlayer />
       <div className="player-six">player 6</div>
     </div>
   )
