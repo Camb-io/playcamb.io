@@ -1,5 +1,5 @@
 import React from 'react';
-import CurrentUser from '../CurrentUser/CurrentUser.main'
+import { CurrentUser } from '../CurrentUser'
 
 
 const BottomPlayers = () => {
