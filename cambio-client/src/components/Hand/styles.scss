@@ -2,9 +2,9 @@
   display: flex;
 }
 
-.cards { 
+.cards {
   flex: 2 1 auto;
-  grid-template-areas: 
+  grid-template-areas:
     "c c"
     "c c";
   border: 2px solid blue;
@@ -12,7 +12,7 @@
 
 .penalty {
   flex: 1 1 auto;
-  grid-template-areas: 
+  grid-template-areas:
     "p"
     "p";
   border: 2px solid red;
@@ -28,8 +28,8 @@
 
 // hard coded for now, should be moved to Card component
 .card {
-  width: 120px;
-  height: 200px;
+  width: 4em;
+  height: 6em;
   border-radius: 10px;
   text-align: center;
   background-color: lightgray;
