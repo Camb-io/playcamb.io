@@ -1,6 +1,7 @@
 import React from 'react';
 import { DiscardDeck } from '../DiscardDeck';
-import { DrawDeck } from '../DrawDeck'
+import { DrawDeck } from '../DrawDeck';
+import { CurrentCard } from '../CurrentCard';
 
 const Decks = () => {
 
@@ -9,6 +10,7 @@ const Decks = () => {
       <p>decks live here</p>
       <DiscardDeck />
       <DrawDeck />
+      <CurrentCard />
     </div>
   )
 
