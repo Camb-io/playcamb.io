@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hand } from '../Hand'
-import { CurrentPlayerControls } from '../CurrentPlayerControls'
+import { CurrentPlayerControls } from './'
 
 const CurrentPlayer = () => {
 

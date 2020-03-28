@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TopPlayers = () => {
-
   return (
     <div className="top-players">
       <div className="player-three">player 3</div>
@@ -9,7 +8,6 @@ const TopPlayers = () => {
       <div className="player-five">player 5</div>
     </div>
   )
-
 }
 
 export default TopPlayers;
