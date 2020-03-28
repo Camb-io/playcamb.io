@@ -1,0 +1,7 @@
+.top-players {
+  border-width: 1px;
+  border-style: solid;
+  border-color: $standard-player-area;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
