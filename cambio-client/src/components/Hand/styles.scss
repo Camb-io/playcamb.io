@@ -28,7 +28,7 @@
 
 // hard coded for now, should be moved to Card component
 .card {
-  width: 4em;
+  min-width: 3em;
   height: 6em;
   border-radius: 10px;
   text-align: center;
