@@ -13,8 +13,16 @@
 @import '../components/Chat/styles.scss';
 
 
+:root {
+  box-sizing: border-box;
+  font-size: calc(.5em+1vw)
+}
 
+*, 
+::before, 
+::after {
+  box-sizing: inherit;
+}
 .app-container {
   height: 90vh;
-  font-size: calc(.5em+1vw)
 }
