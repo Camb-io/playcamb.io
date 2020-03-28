@@ -2,10 +2,18 @@ import { players as allPlayers, deck } from './data'
 
 const mockFetch = (url, options) => {
   return new Promise((resolve, reject) => {
-    // define routes (TODO: add verbs?)
+    // const params = {
+    //   ...JSON.parse(options.body)
+    // }
+    // define routes
     const router = () => {
-      switch (url) {
-        case "/deal":
+      switch (true) {
+        // POST /tables/:slug/join
+        // case url.match(/tables\/([^\/]+)\/join/) && options.method === "POST":
+        //   params.slug = url.match(/tables\/([^\/]+)\/join/)[1]
+        //   return join(params)
+        // GET /tables/:slug/deal
+        case url.match(/tables\/([^\/]+)\/deal/):
           return deal()
         default:
           return error()
@@ -13,6 +21,15 @@ const mockFetch = (url, options) => {
     }
 
     // controller actions
+    const join = params => {
+      allPlayers.push(params.player)
+      respond({
+        ok: true,
+        status: 200,
+        data: { players: allPlayers }
+      })
+    }
+
     const deal = () => {
       const players = allPlayers.reduce((playerObj, player) => {
         playerObj[player] = {
