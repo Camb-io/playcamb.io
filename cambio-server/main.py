@@ -1,8 +1,20 @@
-from flask import Flask, render_template
-from flask_socketio import SocketIO
+from flask import Flask 
+from flask_socketio import SocketIO, send
+
+from models.Player import *
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+app.config['SECRET_KEY'] = 'mysecret'
+socketio = SocketIO(app, cors_allowed_origins='*')
 
-if __name__ == "__main__":
-    socketio.run(app)
+players = []
+
+@socketio.on('join table')
+def join_table(name):
+	player = Player(name)
+	print(player.name)
+	players.append(player)
+	print(players)
+
+if __name__ == '__main__':
+	socketio.run(app, debug=True)

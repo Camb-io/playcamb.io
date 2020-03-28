@@ -3,5 +3,3 @@ class Player:
         self.name = name
         self.score = 0
         self.hand = {}
-
-
