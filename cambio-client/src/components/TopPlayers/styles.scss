@@ -3,7 +3,7 @@
   border-style: solid;
   border-color: $standard-player-area;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 33.33% 33.33% 33.33%;
   grid-auto-rows: 100%;
   grid-template-areas:
     "playerthree"
@@ -11,22 +11,7 @@
     "playerfive";
 }
 
-.player-three {
-  grid-area: "playerthree";
-  border-width: 1px;
-  border-style: solid;
-  border-color: teal;
-}
-
-.player-four {
-  grid-area: "playerfour";
-  border-width: 1px;
-  border-style: solid;
-  border-color: teal;
-}
-
-.player-five {
-  grid-area: "playerfive";
+.player-three, .player-four, .player-five {
   border-width: 1px;
   border-style: solid;
   border-color: teal;
