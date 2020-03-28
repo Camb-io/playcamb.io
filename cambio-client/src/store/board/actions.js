@@ -9,6 +9,7 @@ export const startGame = () => dispatch => {
     dispatch(action(STARTING_GAME))
 
     mockFetch("/deal")
+        .then(r => r.json())
         .then(({ players }) => {
             dispatch(action(START_GAME, players))
         })
