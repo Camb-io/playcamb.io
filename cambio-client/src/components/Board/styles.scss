@@ -5,21 +5,38 @@
 }
 
 .full-board {
-
+  border: 1px solid black;
+  height: 97.5vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 40% 12.5% 47.5%;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "top-players"
+    "deck-area"
+    "bottom-players";
 }
 
 .top-players {
-
+  border-width: 1px;
+  border-style: solid;
+  border-color: $standard-player-area;
 }
 
 .deck-area {
-
+  border-width: 1px;
+  border-style: solid;
+  border-color: $standard-deck-area;
 }
 
 .bottom-players {
-
+  border-width: 1px;
+  border-style: solid;
+  border-color: $standard-player-area;
 }
 
 .current-user {
-  
+  border-width: 1px;
+  border-style: solid;
+  border-color: blue;
 }
