@@ -4,11 +4,17 @@ from flask_sockets import Sockets
 
 html = Blueprint(r"html", __name__)
 ws = Blueprint(r"ws", __name__)
+TABLES = {}
 
 
 @html.route("/")
 def hello():
-    return "Hello World!"
+    return "Try and add a table id to connect to this server!"
+
+
+@html.route("/create-cambio-table", methods=["POST"])
+def create_new_table():
+    pass
 
 
 @ws.route("/echo")
@@ -23,20 +29,6 @@ sockets = Sockets(app)
 
 app.register_blueprint(html, url_prefix=r"/")
 sockets.register_blueprint(ws, url_prefix=r"/")
-
-
-TABLES = {}
-
-
-@app.route("/", methods=["GET"])
-def test():
-    return "Try and add a table id to connect to this server!"
-
-
-@app.route("/create-cambio-table", methods=["POST"])
-def create_new_table():
-    pass
-
 
 if __name__ == "__main__":
     from gevent import pywsgi
