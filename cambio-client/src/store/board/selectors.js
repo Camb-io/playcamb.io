@@ -1,0 +1,1 @@
+export const getBeef = ({ board: { beef } }) => beef
