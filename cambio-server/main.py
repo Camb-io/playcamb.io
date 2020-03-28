@@ -1,10 +1,46 @@
-from flask import Flask, render_template
-from flask_socketio import SocketIO
+from flask import Flask, Blueprint
+from flask_sockets import Sockets
+
+
+html = Blueprint(r"html", __name__)
+ws = Blueprint(r"ws", __name__)
+
+
+@html.route("/")
+def hello():
+    return "Hello World!"
+
+
+@ws.route("/echo")
+def echo_socket(socket):
+    while not socket.closed:
+        message = socket.receive()
+        socket.send(message)
+
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+sockets = Sockets(app)
+
+app.register_blueprint(html, url_prefix=r"/")
+sockets.register_blueprint(ws, url_prefix=r"/")
+
+
 TABLES = {}
 
 
+@app.route("/", methods=["GET"])
+def test():
+    return "Try and add a table id to connect to this server!"
+
+
+@app.route("/create-cambio-table", methods=["POST"])
+def create_new_table():
+    pass
+
+
 if __name__ == "__main__":
-    socketio.run(app)
+    from gevent import pywsgi
+    from geventwebsocket.handler import WebSocketHandler
+
+    server = pywsgi.WSGIServer(("", 5000), app, handler_class=WebSocketHandler)
+    server.serve_forever()
