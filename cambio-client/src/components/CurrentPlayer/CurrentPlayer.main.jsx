@@ -6,6 +6,7 @@ const CurrentPlayer = () => {
 
   return (
     <div className="current-player">
+      current player
       <Hand />
       <CurrentPlayerControls/>
     </div>
