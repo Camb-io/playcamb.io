@@ -1,5 +1,9 @@
 # playcamb.io Server
 
+## Setup
+`conda env update --prefix ./env --file environment.yml  --prune`
+
+
 ## Running
 `gunicorn -k flask_sockets.worker main:app`
 
