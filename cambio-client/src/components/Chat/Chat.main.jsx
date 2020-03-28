@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ChatInput, ChatHistory } from './'
 
@@ -12,17 +12,24 @@ for (let i=0; i < 50; i++){
   fakeMessages.push({text: "Squishykesh", type: "GAME_MESSAGE"})
 }
 
-const Chat = (props) => {
-
+const Chat = ({ socket }) => {
   const [chatInput, setChatInput] = useState("")
   const [messages, setMessages] = useState(fakeMessages)
 
+  useEffect(() => {
+    console.log("new useEffect")
+    socket.onmessage = (e) => {
+      const data = JSON.parse(e.data)
+      setMessages([...messages, {user: data.user, text: data.text, type: "CHAT_MESSAGE"}])
+    }
+  }, [socket, messages]) //useEffect is only ever triggered once
+
   const handleSubmit = (e) => {
     e.preventDefault()
-
-
-
-    setMessages([...messages, {user: "Rishi", text: chatInput, type: "CHAT_MESSAGE"} ])
+    socket.send(JSON.stringify({
+      user: "Rishi",
+      text: chatInput
+    }))
     setChatInput("")
   }
 

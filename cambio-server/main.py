@@ -1,7 +1,6 @@
 from flask import Flask, Blueprint
 from flask_sockets import Sockets
 
-
 html = Blueprint(r"html", __name__)
 ws = Blueprint(r"ws", __name__)
 TABLES = {}
@@ -15,6 +14,21 @@ def hello():
 @html.route("/create-cambio-table", methods=["POST"])
 def create_new_table():
     pass
+
+
+
+@ws.route("/chat")
+def echo_socket(socket):
+    while not socket.closed:
+        message = socket.receive()
+        new_message = message
+        print(message)
+        if new_message:
+          for client in socket.handler.server.clients.values():
+            print(f"Sending Message {new_message}")
+            client.ws.send(new_message)
+        else:
+          print(f"WARNING, CLIENT SENT NONE")
 
 
 @ws.route("/<cambio_table_id>/chat")
