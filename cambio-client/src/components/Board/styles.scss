@@ -15,31 +15,3 @@
     "deck-area"
     "bottom-players";
 }
-
-.top-players {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $standard-player-area;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-}
-
-.deck-area {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $standard-deck-area;
-}
-
-.bottom-players {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $standard-player-area;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-}
-
-.current-user {
-  border-width: 1px;
-  border-style: solid;
-  border-color: blue;
-}
