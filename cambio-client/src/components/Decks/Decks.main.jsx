@@ -1,10 +1,14 @@
 import React from 'react';
+import { DiscardDeck } from '../DiscardDeck';
+import { DrawDeck } from '../DrawDeck'
 
 const Decks = () => {
 
   return (
     <div className="deck-area">
-      <p>pick up and discard deck</p>
+      <p>decks live here</p>
+      <DiscardDeck />
+      <DrawDeck />
     </div>
   )
 
