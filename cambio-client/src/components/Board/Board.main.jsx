@@ -15,7 +15,7 @@ const Board = (props) => {
   return (
     <div>
       {beef}
-      <button onClick={handleClick} >click me</button>
+      <button className="board-button" onClick={handleClick} >click me</button>
     </div>
   )
 }
