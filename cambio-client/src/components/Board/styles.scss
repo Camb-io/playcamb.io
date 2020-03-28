@@ -10,7 +10,6 @@
   width: 100%;
   display: grid;
   grid-template-rows: 40% 12.5% 47.5%;
-  grid-template-columns: auto;
   grid-template-areas:
     "top-players"
     "deck-area"
@@ -21,6 +20,8 @@
   border-width: 1px;
   border-style: solid;
   border-color: $standard-player-area;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
 
 .deck-area {
@@ -33,6 +34,8 @@
   border-width: 1px;
   border-style: solid;
   border-color: $standard-player-area;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
 
 .current-user {
