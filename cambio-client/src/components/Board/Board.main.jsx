@@ -79,13 +79,8 @@ const fakeState = {
 }
 
 const Board = (props) => {
-  const dispatch = useDispatch()
   const players = useSelector(boardSelectors.getPlayers)
   
-  useEffect(() => {
-    dispatch(boardActions.startGame())
-  }, [])
-
   console.log(players)
 
   return (

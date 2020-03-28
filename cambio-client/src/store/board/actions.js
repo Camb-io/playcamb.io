@@ -5,10 +5,10 @@ import {
     STARTING_GAME
 } from './types'
 
-export const startGame = () => dispatch => {
+export const startGame = (slug) => dispatch => {
     dispatch(action(STARTING_GAME))
 
-    mockFetch("/deal")
+    mockFetch(`/tables/${slug}/deal`)
         .then(r => r.json())
         .then(({ players }) => {
             dispatch(action(START_GAME, players))
