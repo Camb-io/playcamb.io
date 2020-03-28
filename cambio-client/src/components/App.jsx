@@ -1,11 +1,15 @@
 import React from 'react';
-import { Board } from './Board'
+import { Table } from './Table'
+import { Route, Switch } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <Board />
-    </div>
+    <main className="app-container">
+      <Switch>
+        <Route exact path="/:slug" component={Table}/>
+        <Route exact path="/" render={() => <div>SPLASH</div>}/>
+      </Switch>
+    </main>
   );
 }
 

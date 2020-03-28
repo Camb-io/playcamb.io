@@ -1,22 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import * as tableSelectors from '../../store/table/selectors'
-import * as tableActionss from '../../store/table/actions'
+import { Board } from '../Board'
+import { Chat } from '../Chat'
 
 const Table = (props) => {
-  const dispatch = useDispatch()
-  const beef = useSelector(boardSelectors.getBeef)
-
-  const handleClick = () => {
-    dispatch(boardActions.setBeef("Delish"))
-  }
-
-
   return (
-    <div>
-      {beef}
-      <button className="table-button" onClick={handleClick} >click me</button>
-    </div>
+    <main className="table-container">
+      <Board />
+      <Chat/>
+    </main>
   )
 }
 
