@@ -7,6 +7,7 @@ import { Decks } from '../Decks'
 import { BottomPlayers } from './'
 
 
+
 const Board = (props) => {
   const dispatch = useDispatch()
   const beef = useSelector(boardSelectors.getBeef)
