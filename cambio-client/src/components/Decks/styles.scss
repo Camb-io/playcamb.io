@@ -6,3 +6,21 @@
   grid-template-columns: auto 10% 10% 10% auto;
   grid-template-rows: 100%;
 }
+
+.discarddeck-area {
+  border-width: 1px;
+  border-style: solid;
+  border-color: purple;
+}
+
+.drawdeck-area {
+  border-width: 1px;
+  border-style: solid;
+  border-color: orange;
+}
+
+.current-card-area {
+  border-width: 1px;
+  border-style: solid;
+  border-color: green;
+}

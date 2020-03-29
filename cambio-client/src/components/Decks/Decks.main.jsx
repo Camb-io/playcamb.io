@@ -1,7 +1,7 @@
 import React from 'react';
-import { DiscardDeck } from '../DiscardDeck';
-import { DrawDeck } from '../DrawDeck';
-import { CurrentCard } from '../CurrentCard';
+import { DiscardDeck } from './';
+import { DrawDeck } from './';
+import { CurrentCard } from './';
 
 const Decks = () => {
 

@@ -6,3 +6,12 @@
   grid-template-rows: 2% auto 10%;
   grid-gap: 3%;
 }
+
+.current-player-controls {
+  border-width: 1px;
+  border-style: solid;
+  border-color: yellow;
+  display: grid;
+  grid-template-columns: auto 20% 20% 20% auto;
+
+}
