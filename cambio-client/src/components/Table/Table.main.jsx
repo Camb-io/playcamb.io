@@ -8,7 +8,14 @@ const Table = (props) => {
   const wsUrl = `ws://127.0.0.1:8000/chat`
   const socket = new WebSocket(wsUrl)
   socket.onopen = () => {
-    socket.send("yo yo whatup it's ya boi")
+    socket.send(JSON.stringify({
+      type: "ENTER_TABLE"
+    }))
+  }
+  socket.onclose = () => {
+    socket.send(JSON.stringify({
+      type: "LEAVE_TABLE"
+    }))
   }
 
   return (

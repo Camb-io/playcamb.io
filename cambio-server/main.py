@@ -1,5 +1,7 @@
 from flask import Flask, Blueprint
 from flask_sockets import Sockets
+import json
+import pdb
 
 html = Blueprint(r"html", __name__)
 ws = Blueprint(r"ws", __name__)
@@ -20,15 +22,29 @@ def create_new_table():
 @ws.route("/chat")
 def echo_socket(socket):
     while not socket.closed:
-        message = socket.receive()
-        new_message = message
-        print(message)
-        if new_message:
+        m = socket.receive()
+        if m:
+          message = json.loads(m)
+          # pdb.set_trace()
+          new_message = json.dumps(make_response(message))
+          # print(f"Broadcasting message {new_message}")
           for client in socket.handler.server.clients.values():
-            print(f"Sending Message {new_message}")
             client.ws.send(new_message)
         else:
-          print(f"WARNING, CLIENT SENT NONE")
+          print(f"SOCKET IS CLOSED")
+
+def make_response(message):
+  if "type" in message and message['type'] == "ENTER_TABLE":
+    return {
+      'type': "ENTER_TABLE",
+      'user': message.get('user',"Rishi")
+    }
+  else:
+    return {
+      'type': "USER_MESSAGE",
+      'user': message['user'],
+      'text': message['text']
+    }
 
 
 @ws.route("/<cambio_table_id>/chat")

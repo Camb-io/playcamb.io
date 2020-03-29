@@ -3,7 +3,10 @@ import React from 'react'
 const UserMessage = ({ message }) => {
   return (
     <span className="chat-message user-message">
-      {message.user}: {message.text}
+      <span className="user-name">
+        {message.user}
+      </span>
+      : {message.text}
     </span>
   )
 }
