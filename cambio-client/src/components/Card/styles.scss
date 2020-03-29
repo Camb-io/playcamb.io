@@ -1,6 +1,8 @@
 .card {
-  width: 120px;
-  height: 200px;
+  width: 12vh;
+  min-width: 80px;
+  height: 20vh;
+  min-height: 150px;
   border-radius: 10px;
   background-color: white;
   border: 2px solid black;
@@ -8,6 +10,7 @@
   position: relative;
   display: flex;
   color: black;
+  box-shadow: 4px 4px 2px #ccc;
 
   &.front {
     .top {
@@ -30,20 +33,28 @@
     background-color: lightgray;
   }
 
+  &.empty {
+    box-shadow: none;
+  }
+
   .hearts, .diamonds {
     color: red;
   }
 
   .hearts::after {
     content: "\2665";
+    padding: 0 0.25em;
   }
   .diamonds::after {
     content: "\2666";
+    padding: 0 0.25em;
   }
   .clubs::after {
     content: "\2663";
+    padding: 0 0.25em;
   }
   .spades::after {
     content: "\2660";
+    padding: 0 0.25em;
   }
 }

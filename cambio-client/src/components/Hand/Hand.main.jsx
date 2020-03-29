@@ -1,28 +1,27 @@
 import React from 'react'
+import { Card } from '../Card'
 
-const Hand = (props) => {
-  // this will likely come from props from the Board, hard coding for now
-  const hand = {
-    cards: ["AS", "10D", "JH", "2C"],
-    penalty: ["3S", "5C"]
-  }
-
-  console.log(props.player.cards)
-  const renderCards = cards =>
-    // this should render a Card component 
-    cards.map(card => (
-      <div className="card" key={card}>
-        {card}
-      </div>
-    ))
+const Hand = ({ cards }) => {
+  const renderPenaltyCards = () =>
+    Object.keys(cards)
+      .filter(key => key.includes("penalty"))
+      .map(card => 
+        <Card 
+          key={card.rank + card.suit}
+          card={card} 
+        />
+      )
 
   return (
     <div className="hand">
       <div className="cards">
-        {renderCards(hand.cards)}
+        <Card card={cards.topLeft} />
+        <Card card={cards.topRight} />
+        <Card card={cards.bottomLeft} />
+        <Card card={cards.bottomRight} />
       </div>
       <div className="penalty">
-        {renderCards(hand.penalty)}
+        {renderPenaltyCards()}
       </div>
     </div>
   )

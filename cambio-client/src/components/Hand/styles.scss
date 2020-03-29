@@ -21,17 +21,12 @@
 .cards, .penalty {
   display: grid;
   justify-items: center;
+<<<<<<< HEAD
   align-items: center;
   grid-row-gap: 1em;
   padding: 1em;
-}
-
-// hard coded for now, should be moved to Card component
-.card {
-  width: 4em;
-  height: 6em;
-  border-radius: 10px;
-  text-align: center;
-  background-color: lightgray;
-  border: 2px solid black;
+=======
+  grid-row-gap: 15px;
+  padding: 15px;
+>>>>>>> c09ec3f... added current player cards
 }
