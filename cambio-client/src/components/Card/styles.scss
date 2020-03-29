@@ -1,0 +1,49 @@
+.card {
+  width: 120px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+  text-align: center;
+  position: relative;
+  display: flex;
+  color: black;
+
+  &.front {
+    .top {
+      position: absolute;
+      top: 0.25em;
+      left: 0.25em;
+    }
+    .middle {
+      margin: auto;
+      font-size: 4em;
+    }
+    .bottom {
+      position: absolute;
+      bottom: 0.25em;
+      right: 0.25em;
+    }
+  }
+
+  &.back {
+    background-color: lightgray;
+  }
+
+  .hearts, .diamonds {
+    color: red;
+  }
+
+  .hearts::after {
+    content: "\2665";
+  }
+  .diamonds::after {
+    content: "\2666";
+  }
+  .clubs::after {
+    content: "\2663";
+  }
+  .spades::after {
+    content: "\2660";
+  }
+}

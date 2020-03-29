@@ -1,21 +1,20 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { TopPlayers } from './'
+import { Decks } from '../Decks'
+import { BottomPlayers } from './'
 import * as boardSelectors from '../../store/board/selectors'
-import * as boardActions from '../../store/board/actions'
 
 const Board = (props) => {
-  const dispatch = useDispatch()
-  const beef = useSelector(boardSelectors.getBeef)
+  const players = useSelector(boardSelectors.getPlayers)
   
-  const handleClick = () => {
-    dispatch(boardActions.setBeef("Delish"))
-  }
-
+  console.log(players)
 
   return (
-    <div>
-      {beef}
-      <button className="board-button" onClick={handleClick} >click me</button>
+    <div className="full-board">
+      <TopPlayers/>
+      <Decks/>
+      <BottomPlayers/>
     </div>
   )
 }
