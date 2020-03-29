@@ -21,17 +21,6 @@
 .cards, .penalty {
   display: grid;
   justify-items: center;
-  align-items: center;
   grid-row-gap: 15px;
   padding: 15px;
-}
-
-// hard coded for now, should be moved to Card component
-.card {
-  width: 4em;
-  height: 6em;
-  border-radius: 10px;
-  text-align: center;
-  background-color: lightgray;
-  border: 2px solid black;
 }
