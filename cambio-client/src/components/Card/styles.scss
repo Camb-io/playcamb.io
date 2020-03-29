@@ -1,8 +1,8 @@
 .card {
-  width: 12vh;
-  min-width: 80px;
-  height: 20vh;
-  min-height: 150px;
+  width: 15vh;
+  min-width: 95px;
+  height: 21vh;
+  min-height: 131px;
   border-radius: 10px;
   background-color: white;
   border: 2px solid black;
@@ -29,8 +29,37 @@
     }
   }
 
+  // https://leaverou.github.io/css3patterns/#upholstery
   &.back {
-    background-color: lightgray;
+    background:
+      radial-gradient(hsl(0, 100%, 37%) 4%, hsl(0, 100%, 28%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
+      radial-gradient(hsl(0, 100%, 37%) 4%, hsl(0, 100%, 28%) 8%, hsla(0, 100%, 20%, 0) 10%) 20px 20px,
+      radial-gradient(hsla(0, 100%, 40%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 20px 0,
+      radial-gradient(hsla(0, 100%, 40%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 20px,
+      radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 20px 0,
+      radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 40px 20px,
+      radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0,
+      radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 20px 20px,
+      linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0,
+      linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0;
+    background-color: #300;
+    background-size: 40px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: '';
+      border-radius: 50%;
+      border: 2px solid hsla(0, 100%, 20%, 1);
+      background: #fff;
+      background-image: url(https://avatars.slack-edge.com/2020-03-28/1023195671633_d0d72c69562ae22bbeb9_88.png);
+      background-size: 40px;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 50px;
+      height: 50px;
+    }
   }
 
   &.empty {

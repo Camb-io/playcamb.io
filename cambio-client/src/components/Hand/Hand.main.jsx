@@ -5,12 +5,15 @@ const Hand = ({ cards }) => {
   const renderPenaltyCards = () =>
     Object.keys(cards)
       .filter(key => key.includes("penalty"))
-      .map(card => 
-        <Card 
-          key={card.rank + card.suit}
-          card={card} 
-        />
-      )
+      .map(key => {
+        const card = cards[key]
+        return (
+          <Card 
+            key={card.rank + card.suit}
+            card={card} 
+          />
+        )
+      })
 
   return (
     <div className="hand">
