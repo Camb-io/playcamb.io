@@ -12,6 +12,7 @@ const ActionForm = () => {
   const [selectedActionIndex, setSelectedActionIndex] = useState(0)
 
   useEffect(() => {
+    // if more actions are imported, add them here
     const allActions = createFnArray(boardActions)
     setActions(allActions)
   }, [])
@@ -21,7 +22,7 @@ const ActionForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const parsedArgs = parseArgs(selectedAction.args)
-    dispatch(boardActions[selectedAction.name](...parsedArgs));
+    dispatch(selectedAction.action(...parsedArgs));
   }
 
   const handleArgChange = name => e => {
@@ -50,7 +51,6 @@ const ActionForm = () => {
   }
 
   const handleActionChange = e => {
-    console.log(e.target.value);
     const index = actions.findIndex(action => action.name === e.target.value)
     setSelectedActionIndex(index)
   }

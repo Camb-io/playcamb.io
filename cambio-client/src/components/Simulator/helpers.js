@@ -26,6 +26,7 @@ export const createFnArray = importedFns => {
   return Object.keys(importedFns).map(action => {
     const args = getArgNames(importedFns[action]).map(arg => ({ name: arg, value: undefined }))
     return {
+      action: importedFns[action],
       name: action,
       args
     }
