@@ -1,8 +1,15 @@
 .card {
+<<<<<<< HEAD
   width: 15vh;
   min-width: 95px;
   height: 21vh;
   min-height: 131px;
+=======
+  width: 12vh;
+  min-width: 80px;
+  height: 20vh;
+  min-height: 150px;
+>>>>>>> added current player cards
   border-radius: 10px;
   background-color: white;
   border: 2px solid black;
@@ -60,6 +67,10 @@
       width: 50px;
       height: 50px;
     }
+  }
+
+  &.empty {
+    box-shadow: none;
   }
 
   &.empty {

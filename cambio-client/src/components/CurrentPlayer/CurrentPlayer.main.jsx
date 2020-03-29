@@ -7,12 +7,12 @@ const cards = {
   topLeft: {
     rank: "10",
     suit: "spades",
-    visible: false
+    visible: true
   },
   topRight: {
     rank: "J",
     suit: "hearts",
-    visible: false
+    visible: true
   },
   bottomLeft: {
     rank: "2",
