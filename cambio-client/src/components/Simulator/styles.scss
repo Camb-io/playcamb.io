@@ -1,0 +1,45 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+
+  &.open {
+    display: block;
+  }
+
+  .inner {
+    background-color: lightblue;
+    margin-top: 20vh;
+    min-height: 20vh;
+    width: 700px;
+    margin: 20vh auto 0;
+
+    form {
+      padding: 1em;
+    }
+    
+    form input,
+    form textarea,
+    select {
+      display: block;
+      font-size: 0.8rem;
+      width: 100%;
+      max-width: 600px;
+      padding: 0.25em 1em;
+      margin: 0.25em 0 0.5em;
+    }
+    
+    form input[type=submit] {
+      margin: 1em 0 0 0;
+      padding: 1em;
+      width: auto;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

@@ -7,16 +7,29 @@ import {
     STARTING_GAME
 } from './types'
 
-export const joinTable = (slug, name) => dispatch => {
-    fetch(`tables/${slug}/join`, {
-        method: "POST",
-        body: JSON.stringify({ name })
-    })
-        .then(r => r.json())
-        .then(player => {
-            dispatch(action(JOIN_GAME, player))
+export function joinTable(slug, name) {
+    return dispatch => {
+        fetch(`tables/${slug}/join`, {
+            method: "POST",
+            body: JSON.stringify({ name })
         })
+            .then(r => r.json())
+            .then(player => {
+                dispatch(action(JOIN_GAME, player))
+            })
+    }
 }
+
+// export const joinTable = (slug, name) => dispatch => {
+//     fetch(`tables/${slug}/join`, {
+//         method: "POST",
+//         body: JSON.stringify({ name })
+//     })
+//         .then(r => r.json())
+//         .then(player => {
+//             dispatch(action(JOIN_GAME, player))
+//         })
+// }
 
 export const playerReady = (slug, name) => dispatch => {
     fetch(`tables/${slug}/ready`, {
