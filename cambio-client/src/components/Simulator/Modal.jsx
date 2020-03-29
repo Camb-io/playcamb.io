@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { usePortal } from './hooks'
 
@@ -7,9 +7,7 @@ const Portal = ({ children }) => {
   return ReactDOM.createPortal(children, target)
 }
 
-const Modal = ({ children }) => {
-  const [open, setOpen] = useState(true)
-
+const Modal = ({ children, open, setOpen }) => {
   const closeModal = e => {
     if (e.target.matches(".modal")) {
       setOpen(false)

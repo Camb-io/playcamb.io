@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import { Simulator } from './Simulator';
 
 function App() {
+  
   return (
     <main className="app-container">
       <Simulator />
