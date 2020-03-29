@@ -6,16 +6,7 @@ import { TopPlayers } from './'
 import { Decks } from '../Decks'
 import { BottomPlayers } from './'
 
-
 const Board = (props) => {
-  const dispatch = useDispatch()
-  const beef = useSelector(boardSelectors.getBeef)
-
-  const handleClick = () => {
-    dispatch(boardActions.setBeef("Delish"))
-  }
-
-
   return (
     <div className="full-board">
       <TopPlayers/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CurrentPlayer } from '../CurrentPlayer'
-import { Hand } from '../Hand'
+import { Hand } from '../Hand';
 
 
 const BottomPlayers = () => {
