@@ -4,12 +4,25 @@ import app from './app'
 // routes
 app.post("/tables/:slug/join", (req, res) => {
   const { name } = req.params
+  const player = { name, ready: false }
   players.push({ name, ready: false })
 
   res({
     ok: true,
     status: 200,
-    data: { players }
+    data: player
+  })
+})
+
+app.patch("/tables/:slug/ready", (req, res) => {
+  const { name } = req.params
+  const player = players.find(p => p.name === name)
+  player.ready = true
+
+  res({
+    ok: true,
+    status: 200,
+    data: player
   })
 })
 
@@ -26,7 +39,7 @@ app.get("/tables/:slug/deal", (req, res) => {
   res({
     ok: true,
     status: 200,
-    data: { players }
+    data: players
   })
 })
 

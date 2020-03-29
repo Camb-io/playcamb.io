@@ -14,7 +14,9 @@ const Table = (props) => {
     dispatch(boardActions.joinTable(slug, "P1"))
     dispatch(boardActions.joinTable(slug, "P2"))
     dispatch(boardActions.joinTable(slug, "P3"))
-    dispatch(boardActions.startGame(slug))
+    dispatch(boardActions.playerReady(slug, "P2"))
+    dispatch(boardActions.playerReady(slug, "P3"))
+    // dispatch(boardActions.startGame(slug))
   }, [dispatch, slug])
 
   // useEffect(() => {

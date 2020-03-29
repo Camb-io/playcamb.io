@@ -1,4 +1,6 @@
 import {
+    JOIN_GAME,
+    PLAYER_READY,
     START_GAME,
     STARTING_GAME
 } from './types'
@@ -16,6 +18,30 @@ const initialState = {
 }
 
 const reducerActions = {
+    [JOIN_GAME](state, action) {
+        console.log(action.payload)
+        return {
+            ...state,
+            players: {
+                ...state.players,
+                [action.payload.name]: {
+                    ...action.payload
+                }
+            }
+        }
+    },
+    [PLAYER_READY](state, action) {
+        return {
+            ...state,
+            players: {
+                ...state.players,
+                [action.payload.name]: {
+                    ...state.players[action.payload.name],
+                    ready: true
+                }
+            }
+        }
+    },
     [START_GAME](state, action) {
         return {
             ...state,
