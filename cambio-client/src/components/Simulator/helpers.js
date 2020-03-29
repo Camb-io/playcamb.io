@@ -1,5 +1,5 @@
 // take in a fn definition and return an array of argument names
-export const getArgNames = fn => {
+const getArgNames = fn => {
   let fnString = fn.toString()
   let argStr = "";
   // regular fns
@@ -13,4 +13,21 @@ export const getArgNames = fn => {
   }
   let args = argStr.split(",").map(arg => arg.trim())
   return args
+}
+
+export const parseArgs = args => {
+  return args.map(arg => {
+    if (!arg.value) return undefined;
+    return arg.value[0] === "{" || arg.value[0] === "[" ? JSON.parse(arg.value) : arg.value
+  })
+}
+
+export const createFnArray = importedFns => {
+  return Object.keys(importedFns).map(action => {
+    const args = getArgNames(importedFns[action]).map(arg => ({ name: arg, value: undefined }))
+    return {
+      name: action,
+      args
+    }
+  })
 }

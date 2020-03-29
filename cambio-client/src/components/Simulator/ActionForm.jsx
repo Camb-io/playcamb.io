@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { getArgNames } from './helpers'
+import ActionFormOption from './ActionFormOption'
+import ActionFormArgument from './ActionFormArgument'
+import { createFnArray, parseArgs } from './helpers'
 import * as boardActions from '../../store/board/actions'
 
-const allActions = Object.keys(boardActions).map(action => {
-  const args = getArgNames(boardActions[action]).map(arg => ({ name: arg, value: undefined }))
-  return {
-    name: action,
-    args
-  }
-})
-
-const ActionForm = ({ open, setOpen }) => {
+const ActionForm = () => {
   const dispatch = useDispatch()
   const [actions, setActions] = useState([])
   const [selectedActionIndex, setSelectedActionIndex] = useState(0)
 
   useEffect(() => {
+    const allActions = createFnArray(boardActions)
     setActions(allActions)
   }, [])
 
@@ -25,10 +20,7 @@ const ActionForm = ({ open, setOpen }) => {
   
   const handleSubmit = e => {
     e.preventDefault()
-    const parsedArgs = selectedAction.args.map(arg => { 
-      if (!arg.value) return undefined;
-      return arg.value[0] === "{" || arg.value[0] === "[" ? JSON.parse(arg.value) : arg.value
-    })
+    const parsedArgs = parseArgs(selectedAction.args)
     dispatch(boardActions[selectedAction.name](...parsedArgs));
   }
 
@@ -58,28 +50,33 @@ const ActionForm = ({ open, setOpen }) => {
   }
 
   const handleActionChange = e => {
-    setSelectedActionIndex(parseInt(e.target.value))
+    console.log(e.target.value);
+    const index = actions.findIndex(action => action.name === e.target.value)
+    setSelectedActionIndex(index)
   }
 
   const renderOptions = () => {
-    return actions.map((action, index) => 
-      <option value={index} key={action.name}>
-        {action.name}({action.args.map(arg => arg.name).join(", ")})
-      </option>
-    )
+    return actions.map(action => {
+      const text = action.name + `(${action.args.map(arg => arg.name).join(", ")})`
+      return <ActionFormOption 
+        key={action.name} 
+        value={action.name} 
+        text={text}
+      />
+    })
   }
 
   const renderArgs = () => {
     if (!selectedAction) return null;
 
-    return selectedAction.args.map((arg, index) => {
-      return (
-        <div key={arg.name}>
-          <label htmlFor={arg.name}>{arg.name}</label>
-          <textarea name={arg.name} rows="2" onChange={handleArgChange(arg.name)} value={arg.value}></textarea>
-        </div>
-      )
-    })
+    return selectedAction.args.map(arg => 
+      <ActionFormArgument 
+        key={arg.name} 
+        value={arg.value} 
+        name={arg.name} 
+        handleChange={handleArgChange} 
+      /> 
+    )
   }
 
   return (
