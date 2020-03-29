@@ -1,18 +1,20 @@
 class Fexpress {
   router = []
+  route = null
 
   // request returns a promise...
   request(url, options) {
     return new Promise((resolve, reject) => {
-      // get params from body
-      const params = options.body ? JSON.parse(options.body) : {}
+      this.currentRoute = this.findRoute(url, options.method)
 
-      const route = this.findRoute(url, options, params)
-
-      if (!route) {
+      if (!this.currentRoute) {
         this.response(resolve, { ok: false, status: 500, data: { message: "woops!" } })
       } else {
-        route.callback({ params }, ({ ok, status, data }) => {
+        const params = this.getParams(options.body, url)
+        // call the registered callback from the route, passing in:
+        // - the request object (params from url + body)
+        // - a callback to send the response 
+        this.currentRoute.callback({ params }, ({ ok, status, data }) => {
           this.response(resolve, { ok, status, data })
         })
       }
@@ -51,20 +53,24 @@ class Fexpress {
     return new RegExp(`${expression}`)
   }
 
-  findRoute(url, options, params) {
+  // helper to find route from url + method
+  findRoute(url, method) {
     return this.router.find(({ route }) => {
-      if (route.method !== options.method) return false;
+      if (route.method !== method) return false;
 
-      const matches = url.match(route.matcher)
-      if (matches) {
-        // add params from url
-        for (let key in matches.groups) {
-          params[key] = matches.groups[key]
-        }
-        return true
-      }
-      return false
+      return url.match(route.matcher)
     })
+  }
+
+  getParams(body, url) {
+    // get params from body
+    const params = body ? JSON.parse(body) : {}
+    const matches = url.match(this.currentRoute.route.matcher)
+    // add params from url
+    for (let key in matches.groups) {
+      params[key] = matches.groups[key]
+    }
+    return params
   }
 
   registerRoute(url, method, callback) {
