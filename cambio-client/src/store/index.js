@@ -3,13 +3,13 @@ import thunk from 'redux-thunk'
 import boardReducer from './board/reducer'
 
 const rootReducer = combineReducers({
-    board: boardReducer
+  board: boardReducer
 })
 
 const store = createStore(rootReducer, compose(
-    applyMiddleware(thunk),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
-  ))
+  applyMiddleware(thunk),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+))
 
-  
+
 export default store 

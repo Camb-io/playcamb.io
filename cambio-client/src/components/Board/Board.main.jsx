@@ -1,13 +1,15 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import * as boardSelectors from '../../store/board/selectors'
-import * as boardActions from '../../store/board/actions'
+import { useSelector } from 'react-redux'
 import { TopPlayers } from './'
 import { Decks } from '../Decks'
 import { BottomPlayers } from './'
-
+import * as boardSelectors from '../../store/board/selectors'
 
 const Board = (props) => {
+  const players = useSelector(boardSelectors.getPlayers)
+  
+  console.log(players)
+
   return (
     <div className="full-board">
       <TopPlayers/>
