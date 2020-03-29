@@ -1,5 +1,5 @@
 // players
-const players = ["P1", "P2", "P3", "P4", "P5", "P6"]
+const players = []
 
 // make deck
 const deck = []
