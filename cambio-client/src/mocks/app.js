@@ -1,35 +1,37 @@
 class Fexpress {
   router = []
 
+  // request returns a promise...
   request(url, options) {
     return new Promise((resolve, reject) => {
       // get params from body
-      let params = options.body ? JSON.parse(options.body) : {}
-      // 
+      const params = options.body ? JSON.parse(options.body) : {}
+
       const route = this.findRoute(url, options, params)
 
       if (!route) {
-        // error response
+        this.response(resolve, { ok: false, status: 500, data: { message: "woops!" } })
       } else {
         route.callback({ params }, ({ ok, status, data }) => {
-          setTimeout(() => {
-            resolve(this.response({ ok, status, data }))
-          }, 500)
+          this.response(resolve, { ok, status, data })
         })
       }
     })
   }
 
-  response({ ok, status, data }) {
-    const body = JSON.stringify(data)
-    return {
-      ok,
-      status,
-      body,
-      json() {
-        return new Promise((resolve) => resolve(JSON.parse(body)))
-      }
-    }
+  // response resolves it
+  response(resolve, { ok, status, data }) {
+    setTimeout(() => {
+      const body = JSON.stringify(data)
+      resolve({
+        ok,
+        status,
+        body,
+        json() {
+          return new Promise((resolve) => resolve(JSON.parse(body)))
+        }
+      })
+    }, 500)
   }
 
   // match on string starting with :
@@ -56,9 +58,8 @@ class Fexpress {
       const matches = url.match(route.matcher)
       if (matches) {
         // add params from url
-        params = {
-          ...params,
-          ...matches.groups
+        for (let key in matches.groups) {
+          params[key] = matches.groups[key]
         }
         return true
       }
