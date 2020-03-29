@@ -22,6 +22,7 @@ body {
   box-sizing: inherit;
 }
 
+@import '../components/Card/styles.scss';
 
 .app-container {
   height: 90vh;
