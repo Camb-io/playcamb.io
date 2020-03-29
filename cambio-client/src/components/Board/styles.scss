@@ -6,17 +6,13 @@
 
 .full-board {
   border: 1px solid black;
-  height: 97.5vh;
+  max-height: 97.5vh;
   width: 100%;
   display: grid;
-  grid-template-rows: 40% 12.5% 47.5%;
-  grid-template-areas:
-    "topplayers"
-    "deckarea"
-    "bottomplayers";
+  grid-template-rows: 42.5% 15% 42.5%;
 }
 
-.bottom-players {
+.players {
   border-width: 1px;
   border-style: solid;
   border-color: $standard-player-area;
@@ -24,35 +20,10 @@
   grid-template-columns: 32% 32% 32%;
   grid-auto-rows: 100%;
   grid-gap: 2%;
-  grid-template-areas:
-    "playertwo"
-    "currentuser"
-    "playersix";
 }
 
-.player-two, .player-six {
-  grid-area: "playerthree";
-  border-width: 1px;
-  border-style: solid;
-  border-color: teal;
-}
-
-.top-players {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $standard-player-area;
-  display: grid;
-  grid-template-columns: 32% 32% 32%;
-  grid-auto-rows: 100%;
-  grid-gap: 2%;
-  grid-template-areas:
-    "playerthree"
-    "playerfour"
-    "playerfive";
-}
-
-.player-three, .player-four, .player-five {
-  border-width: 1px;
+.player {
+  border-width: 1000px;
   border-style: solid;
   border-color: teal;
 }

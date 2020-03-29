@@ -6,10 +6,14 @@
 @import '../components/Table/styles.scss';
 @import '../components/Chat/styles.scss';
 
+html{
+
+  font-size: 16px;
+}
 
 body {
   box-sizing: border-box;
-  font-size: calc(.5em+1vw)
+  font-size: calc(.4em + 1vw)
 }
 
 *, 
