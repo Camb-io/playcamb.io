@@ -5,7 +5,8 @@ import app from './app'
 app.post("/tables/:slug/join", (req, res) => {
   const { name } = req.params
   players.push({ name, ready: false })
-  return res({
+
+  res({
     ok: true,
     status: 200,
     data: { players }
@@ -21,7 +22,8 @@ app.get("/tables/:slug/deal", (req, res) => {
       topRight: { ...deck.splice(0, 1)[0], visibleTo: [] }
     }
   })
-  return res({
+
+  res({
     ok: true,
     status: 200,
     data: { players }
