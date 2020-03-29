@@ -22,13 +22,13 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-row-gap: 15px;
-  padding: 15px;
+  grid-row-gap: 1em;
+  padding: 1em;
 }
 
 // hard coded for now, should be moved to Card component
 .card {
-  width: 4em;
+  min-width: 3em;
   height: 6em;
   border-radius: 10px;
   text-align: center;
