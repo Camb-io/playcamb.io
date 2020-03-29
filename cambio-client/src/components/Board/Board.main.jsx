@@ -79,6 +79,10 @@ const fakeState = {
 }
 
 const Board = (props) => {
+  const players = useSelector(boardSelectors.getPlayers)
+  
+  console.log(players)
+
   return (
     <div className="full-board">
       <Players players={fakeState.players.slice(Math.ceil(fakeState.players.length/2))} currentUser={fakeState.currentUser}/>
