@@ -1,15 +1,8 @@
 .card {
-<<<<<<< HEAD
-  width: 15vh;
-  min-width: 95px;
-  height: 21vh;
-  min-height: 131px;
-=======
-  width: 12vh;
-  min-width: 80px;
-  height: 20vh;
-  min-height: 150px;
->>>>>>> added current player cards
+  width: 11vh;
+  min-width: 75px;
+  height: 15vh;
+  min-height: 100px;
   border-radius: 10px;
   background-color: white;
   border: 2px solid black;
@@ -27,7 +20,7 @@
     }
     .middle {
       margin: auto;
-      font-size: 4em;
+      font-size: 3em;
     }
     .bottom {
       position: absolute;
@@ -96,5 +89,12 @@
   .spades::after {
     content: "\2660";
     padding: 0 0.25em;
+  }
+}
+
+.penalty {
+  position: relative;
+  .card {
+    position: absolute;
   }
 }

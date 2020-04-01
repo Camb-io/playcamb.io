@@ -1,22 +1,20 @@
-.hand {
-  display: flex;
-}
+.player {
+  
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
 
-.cards {
-  flex: 2 1 auto;
-  grid-template-areas:
-    "c c"
-    "c c";
-  border: 2px solid blue;
-}
+  .hand {
+    display: flex;
+    margin: 0.25rem;
 
-.penalty {
-  flex: 1 1 auto;
-  grid-template-areas:
-    "p"
-    "p";
-  border: 2px solid red;
-}
+    .cards {
+      flex: 2 1 auto;
+      grid-template-areas:
+        "c c"
+        "c c";
+    }
 
 .cards, .penalty {
   display: grid;
@@ -25,16 +23,19 @@
   grid-row-gap: 1em;
   padding: 1em;
 }
-<<<<<<< HEAD
+    .penalty {
+      flex: 1 1 auto;
+      grid-template-areas:
+        "p"
+        "p";
+    }
 
-// hard coded for now, should be moved to Card component
-.card {
-  min-width: 3em;
-  height: 6em;
-  border-radius: 10px;
-  text-align: center;
-  background-color: lightgray;
-  border: 2px solid black;
+    .cards, .penalty {
+      display: grid;
+      justify-items: center;
+      align-items: top;
+      grid-row-gap: 0.5rem;
+    }
+
+  }
 }
-=======
->>>>>>> e5e1fbc9d85c4848af4d204b139e175b916883c1
