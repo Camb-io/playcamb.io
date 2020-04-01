@@ -1,31 +1,46 @@
 import React from 'react'
+import { CurrentPlayerControls } from '../CurrentPlayer'
 import { Card } from '../Card'
 
-const Hand = ({ cards }) => {
+const Hand = ({ player, isCurrentPlayer }) => {
+  // penalty card testing
+  if (player.cards) {
+    player.cards.penalties = [{ rank: "10", suit: "spades" }, { rank: "10", suit: "spades" }, { rank: "10", suit: "spades" }]
+  }
+
   const renderPenaltyCards = () =>
-    Object.keys(cards)
-      .filter(key => key.includes("penalty"))
-      .map(key => {
-        const card = cards[key]
-        return (
-          <Card 
-            key={card.rank + card.suit}
-            card={card} 
-          />
-        )
-      })
+  player.cards?.penalties?.map(card => (
+      <Card 
+        key={card.rank + card.suit}
+        card={card} 
+      />
+    ))
+
+  const renderCards = () => {
+    if (!player.cards) return null
+    const { cards } = player
+    return (
+      <>
+        <div className="cards">
+          <Card card={cards.topLeft} />
+          <Card card={cards.topRight} />
+          <Card card={cards.bottomLeft} />
+          <Card card={cards.bottomRight} />
+        </div>
+        <div className="penalty">
+          {renderPenaltyCards()}
+        </div>
+      </>
+    )
+  }
 
   return (
-    <div className="hand">
-      <div className="cards">
-        <Card card={cards.topLeft} />
-        <Card card={cards.topRight} />
-        <Card card={cards.bottomLeft} />
-        <Card card={cards.bottomRight} />
+    <div className={`player${isCurrentPlayer ? " current-player" : ""}`}>
+      <h2>{player.name}</h2>
+      <div className="hand">
+        {renderCards()}
       </div>
-      <div className="penalty">
-        {renderPenaltyCards()}
-      </div>
+      {isCurrentPlayer && <CurrentPlayerControls />}
     </div>
   )
 }

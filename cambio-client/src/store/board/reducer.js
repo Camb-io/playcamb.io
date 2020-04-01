@@ -7,7 +7,7 @@ import {
 
 const initialState = {
     loading: false,
-    currentUser: null,
+    currentUser: "P1",
     activePlayer: null,
     players: null,
     currentDiscardTop: null,
@@ -19,7 +19,6 @@ const initialState = {
 
 const reducerActions = {
     [JOIN_GAME](state, action) {
-        console.log(action.payload)
         return {
             ...state,
             players: {
