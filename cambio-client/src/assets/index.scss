@@ -7,6 +7,11 @@
 @import '../components/Card/styles.scss';
 @import '../components/Decks/styles.scss';
 
+
+html{
+  font-size: 16px;
+}
+
 body {
   box-sizing: border-box;
   font-size: calc(.4em + 1vw)

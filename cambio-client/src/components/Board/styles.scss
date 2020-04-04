@@ -8,45 +8,26 @@
   border: 1px solid black;
   max-height: 97.5vh;
   width: 100%;
+  padding: 1%;
   display: grid;
-  grid-template-rows: 42.5% 15% 42.5%;
-}
-
-.players {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $standard-player-area;
-  display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-columns: repeat(3, $board-column-width);
+  grid-template-rows: $player-area-height $deck-area-height $player-area-height;
   grid-auto-rows: 100%;
-  grid-template-areas:
-    "playertwo"
-    "currentuser"
-    "playersix";
+  grid-gap: $board-grid-gap;
 }
 
-.player-two, .player-six {
-  grid-area: "playerthree";
-  border-width: 1px;
-  border-style: solid;
-  border-color: teal;
-}
+// .players {
+//   border-width: 1px;
+//   border-style: solid;
+//   border-color: $standard-player-area;
+//   display: grid;
+//   grid-template-columns: 32% 32% 32%;
+//   grid-auto-rows: 100%;
+//   grid-gap: 2%;
+// }
 
-.top-players {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $standard-player-area;
-  display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
-  grid-auto-rows: 100%;
-  grid-template-areas:
-    "playerthree"
-    "playerfour"
-    "playerfive";
-}
-
-.player-three, .player-four, .player-five {
-  border-width: 1px;
+.player {
+  border-width: 1000px;
   border-style: solid;
   border-color: teal;
 }

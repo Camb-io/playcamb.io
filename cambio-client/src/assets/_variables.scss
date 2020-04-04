@@ -2,3 +2,12 @@ $standard-button-color: DodgerBlue;
 $standard-button-text-color: #fff;
 $standard-player-area: #D3D3D3;
 $standard-deck-area: red;
+
+$hand-padding: 10px;
+$hand-gap-size: 5px;
+$board-grid-gap: 2%;
+
+$board-column-width: (100% - $board-grid-gap * 2) / 3;
+$deck-area-height: (100% - $board-grid-gap * 2) / 5 ;
+$player-area-height: (100% - $board-grid-gap * 2 - $deck-area-height) / 2;
+

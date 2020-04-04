@@ -1,16 +1,13 @@
 import React from 'react';
-import { DiscardDeck } from './';
-import { DrawDeck } from './';
-import { CurrentCard } from './';
+import { Card } from '../Card'
 
 const Decks = () => {
 
   return (
     <div className="deck-area">
-      <p>decks live here</p>
-      <DiscardDeck />
-      <DrawDeck />
-      <CurrentCard />
+      <Card card={{visible: false}} />
+      <Card card={{visible: false}} />
+      <Card card={{visible: false}} />
     </div>
   )
 
