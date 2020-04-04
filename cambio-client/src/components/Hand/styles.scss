@@ -25,13 +25,3 @@
   grid-row-gap: 1em;
   padding: 1em;
 }
-
-// hard coded for now, should be moved to Card component
-.card {
-  width: 4em;
-  height: 6em;
-  border-radius: 10px;
-  text-align: center;
-  background-color: lightgray;
-  border: 2px solid black;
-}
