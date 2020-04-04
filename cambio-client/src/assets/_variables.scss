@@ -7,7 +7,9 @@ $hand-padding: 10px;
 $hand-gap-size: 5px;
 $board-grid-gap: 2%;
 
+$total-padding-size: $hand-padding * 6 + $hand-gap-size * 2;
+
 $board-column-width: (100% - $board-grid-gap * 2) / 3;
-$deck-area-height: (100% - $board-grid-gap * 2) / 5 ;
+$deck-area-height: (100% - $board-grid-gap * 2) / 5 + 3%;
 $player-area-height: (100% - $board-grid-gap * 2 - $deck-area-height) / 2;
 

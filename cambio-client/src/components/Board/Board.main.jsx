@@ -13,65 +13,65 @@ const fakeState = {
     [ {
       name: "Player1",
       cards: {
-        bottomLeft: { value: "Ace", visibleTo: [] },
-        bottomRight: { value: "Ace", visibleTo: [] },
-        topLeft: { value: "Ace", visibleTo: [] },
-        topRight: { value: "Ace", visibleTo: [] },
-        penalty1: { value: "10", visibleTo: [] }
+        bottomLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        bottomRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        topLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        topRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        penalty1: { suit: "hearts", rank: "10", visibleTo: [] }
       }
     },
     {
       name: "Player2",
       cards: {
-        bottomLeft: { value: "Ace", visibleTo: [] },
-        bottomRight: { value: "Ace", visibleTo: [] },
-        topLeft: { value: "Ace", visibleTo: [] },
-        topRight: { value: "Ace", visibleTo: [] },
-        penalty1: { value: "10", visibleTo: [] }
+        bottomLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        bottomRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        topLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        topRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        penalty1: { suit: "hearts", rank: "10", visibleTo: [] }
       }
     },
     {
       name: "Player3",
       cards: {
-        bottomLeft: { value: "Ace", visibleTo: [] },
-        bottomRight: { value: "Ace", visibleTo: [] },
-        topLeft: { value: "Ace", visibleTo: [] },
-        topRight: { value: "Ace", visibleTo: [] },
-        penalty1: { value: "10", visibleTo: [] }
+        bottomLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        bottomRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        topLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        topRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        penalty1: { suit: "hearts", rank: "10", visibleTo: [] }
       }
     },
     {
       name: "Player4",
       cards: {
-        bottomLeft: { value: "Ace", visibleTo: [] },
-        bottomRight: { value: "Ace", visibleTo: [] },
-        topLeft: { value: "Ace", visibleTo: [] },
-        topRight: { value: "Ace", visibleTo: [] },
-        penalty1: { value: "10", visibleTo: [] }
+        bottomLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        bottomRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        topLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        topRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        penalty1: { suit: "hearts", rank: "10", visibleTo: [] }
       }
     },
     {
       name: "Player5",
       cards: {
-        bottomLeft: { value: "Ace", visibleTo: [] },
-        bottomRight: { value: "Ace", visibleTo: [] },
-        topLeft: { value: "Ace", visibleTo: [] },
-        topRight: { value: "Ace", visibleTo: [] },
-        penalty1: { value: "10", visibleTo: [] }
+        bottomLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        bottomRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        topLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        topRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        penalty1: { suit: "hearts", rank: "10", visibleTo: [] }
       }
     },
     {
       name: "Player6",
       cards: {
-        bottomLeft: { value: "Ace", visibleTo: [] },
-        bottomRight: { value: "Ace", visibleTo: [] },
-        topLeft: { value: "Ace", visibleTo: [] },
-        topRight: { value: "Ace", visibleTo: [] },
-        penalty1: { value: "10", visibleTo: [] }
+        bottomLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        bottomRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        topLeft: { suit: "hearts", rank: "A", visibleTo: [] },
+        topRight: { suit: "hearts", rank: "A", visibleTo: [] },
+        penalty1: { suit: "hearts", rank: "10", visibleTo: [] }
       }
     }],
-  currentDiscardTop: { value: "Jack" },
-  drawnCard: { value: "2" },
+  currentDiscardTop: { suit: "hearts", rank: "Jack" },
+  drawnCard: { suit: "hearts", rank: "2" },
   matchable: false,
   gameEnding: false,
   gifting: false,

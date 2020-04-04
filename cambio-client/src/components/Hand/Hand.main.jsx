@@ -10,7 +10,7 @@ const Hand = ({ cards }) => {
         return (
           <Card 
             key={card.rank + card.suit}
-            card={card} 
+            visible={true} card={card} 
           />
         )
       })
@@ -18,10 +18,10 @@ const Hand = ({ cards }) => {
   return (
     <div className="hand">
       <div className="cards">
-        <Card card={cards.topLeft} />
-        <Card card={cards.topRight} />
-        <Card card={cards.bottomLeft} />
-        <Card card={cards.bottomRight} />
+        <Card visible={true} card={cards.topLeft} />
+        <Card visible={true} card={cards.topRight} />
+        <Card visible={true} card={cards.bottomLeft} />
+        <Card visible={true} card={cards.bottomRight} />
       </div>
       <div className="penalty">
         {renderPenaltyCards()}
