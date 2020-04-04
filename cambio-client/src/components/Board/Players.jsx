@@ -7,14 +7,15 @@ const Players = (props) => {
 
   const renderPlayers = () => {
     return props.players.map(player => {
+      console.log(player)
       if (player.name === props.currentUser){
         return <div className="current-player">
           current player
-          <Hand player={player}/> 
+          <Hand cards={player.cards}/> 
           <CurrentPlayerControls/>
           </div>
       } else {
-        return <Hand player={player} className="player"/>
+        return <Hand cards={player.cards} className="player"/>
       }
     })
   }
