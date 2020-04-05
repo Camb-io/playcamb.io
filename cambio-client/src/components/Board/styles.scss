@@ -1,23 +1,25 @@
-.board-button {
-  background-color: $standard-button-color;
-  color: $standard-button-text-color;
-  outline: none;
-}
-
-.full-board {
-  border: 1px solid black;
-  max-height: 97.5vh;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 42.5% 15% 42.5%;
+.board {
+  padding: 1rem;
+  background: url(https://www.transparenttextures.com/patterns/felt.png);
+  background-color: $board-background-color;
+  position: relative;
+  height: 100vh;
 }
 
 .players {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $standard-player-area;
-  display: grid;
-  grid-template-columns: 32% 32% 32%;
-  grid-auto-rows: 100%;
-  grid-gap: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.decks {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }

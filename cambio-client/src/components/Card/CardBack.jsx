@@ -3,9 +3,7 @@ import React from 'react'
 const CardBack = () => {
 
   return (
-    <div className="card back">
-      
-    </div>
+    <div className="card back"></div>
   )
 }
 

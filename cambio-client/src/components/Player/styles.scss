@@ -1,0 +1,56 @@
+.player {
+  width: 30%;
+  border: 2px solid $board-diviver-color;
+  border-radius: 20px;
+  
+  .name {
+    font: bold 2rem Helvetica;
+    margin: 0;
+    text-align: center;
+    background-color: $board-diviver-color;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+  }
+
+  .hand {
+    display: flex;
+
+    .cards, .penalty {
+      display: grid;
+      justify-items: center;
+      align-items: top;
+      grid-row-gap: 0.5rem;
+      padding: 0.5rem 0;
+    }
+
+    .cards {
+      flex: 2 1 auto;
+      grid-template-areas:
+        "c c"
+        "c c";
+      border-right: 2px solid $board-diviver-color;
+    }
+
+    .penalty {
+      flex: 1 1 auto;
+      grid-template-areas:
+        "p"
+        "p";
+      background-color: rgba(200, 50, 50, 0.5);
+      border-bottom-right-radius: 16px;
+
+      .card {
+        grid-area: 1/1;
+      }
+
+      $max-penalties: 5;
+      @for $i from 0 to $max-penalties {
+        .card:nth-child(#{$i + 1}) {
+            top: $i * 50 + px;
+        }
+      }
+        
+    }
+  }
+}
+

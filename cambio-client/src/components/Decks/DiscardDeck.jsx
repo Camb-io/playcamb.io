@@ -1,10 +1,11 @@
 import React from 'react';
+import { Card } from '../Card'
 
 const DiscardDeck = () => {
 
   return (
     <div className="discarddeck-area">
-      <p>i am the discard deck</p>
+      <Card card={{ rank: "5", suit: "diamonds", visible: true }} />
     </div>
   )
 

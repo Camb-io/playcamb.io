@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { Card } from '../Card'
 const DrawDeck = () => {
 
   return (
     <div className="drawdeck-area">
-      <p>i am the deck you can draw from</p>
+      <Card card={{ visible: false }} />
     </div>
   )
 
