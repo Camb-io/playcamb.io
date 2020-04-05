@@ -17,6 +17,7 @@
   border-style: solid;
   border-color: $standard-player-area;
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: 32% 32% 32%;
   grid-auto-rows: 100%;
   grid-gap: 2%;
@@ -24,6 +25,38 @@
 
 .player {
   border-width: 1000px;
+=======
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-auto-rows: 100%;
+  grid-template-areas:
+    "playertwo"
+    "currentuser"
+    "playersix";
+}
+
+.player-two, .player-six {
+  grid-area: "playerthree";
+  border-width: 1px;
+  border-style: solid;
+  border-color: teal;
+}
+
+.top-players {
+  border-width: 1px;
+  border-style: solid;
+  border-color: $standard-player-area;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-auto-rows: 100%;
+  grid-template-areas:
+    "playerthree"
+    "playerfour"
+    "playerfive";
+}
+
+.player-three, .player-four, .player-five {
+  border-width: 1px;
+>>>>>>> e5e1fbc9d85c4848af4d204b139e175b916883c1
   border-style: solid;
   border-color: teal;
 }
