@@ -1,26 +1,11 @@
-.deck-area {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $standard-deck-area;
-  display: grid;
-  grid-template-columns: auto 10% 10% 10% auto;
-  grid-template-rows: 100%;
-}
-
 .discarddeck-area {
-  border-width: 1px;
-  border-style: solid;
-  border-color: purple;
+  margin: 0 1rem;
 }
 
 .drawdeck-area {
-  border-width: 1px;
-  border-style: solid;
-  border-color: orange;
+  margin: 0 1rem;
 }
 
 .current-card-area {
-  border-width: 1px;
-  border-style: solid;
-  border-color: green;
+  margin: 0 1rem;
 }

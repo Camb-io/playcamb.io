@@ -1,14 +1,15 @@
 @import 'variables.scss';
 @import '../components/Board/styles.scss';
 @import '../components/Decks/styles.scss';
-@import '../components/CurrentPlayer/styles.scss';
-@import '../components/Hand/styles.scss';
+@import '../components/Controls/styles.scss';
+@import '../components/Player/styles.scss';
 @import '../components/Table/styles.scss';
 @import '../components/Chat/styles.scss';
-@import '../components/CurrentPlayer/styles.scss';
-@import '../components/Hand/styles.scss';
 @import '../components/Card/styles.scss';
-@import '../components/Decks/styles.scss';
+
+html{
+  font-size: 16px;
+}
 
 body {
   box-sizing: border-box;
@@ -19,13 +20,10 @@ body {
 ::before, 
 ::after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-<<<<<<< HEAD
-=======
-@import '../components/Card/styles.scss';
-
->>>>>>> added current player cards
 .app-container {
   height: 90vh;
 }

@@ -2,22 +2,33 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import * as boardSelectors from '../../store/board/selectors'
 import { Decks } from '../Decks'
-import  Players  from './Players'
+import { Player }  from '../Player'
+import { Controls }  from '../Controls'
 
 const Board = () => {
-  const players = useSelector(boardSelectors.getPlayers)
+  const opponents = useSelector(boardSelectors.getOpponentPlayers)
+  const currentPlayer = useSelector(boardSelectors.getCurrentPlayer)
   
-  if (players?.length) {
-    return (
-      <div className="full-board">
-        <Players players={players.slice(Math.ceil(players.length/2))} currentUser="P1"/>
-        <Decks/>
-        <Players players={players.slice(0, Math.ceil(players.length / 2))} currentUser="P1" />
+  return (
+    <div className="board">
+      <div className="players">
+        <Player player={opponents[0]} />
+        <Player player={opponents[2]} />
+        <Player player={opponents[1]} />
       </div>
-    )
-  } else {
-    return null
-  }
+      <div class="decks">
+        <Decks />
+      </div>
+      <div className="players">
+        <Player player={opponents[3]} />
+        <Player player={currentPlayer} isCurrentPlayer={true} />
+        <Player player={opponents[4]} />
+      </div>
+      <div className="controls">
+        <Controls />
+      </div>
+    </div>
+  )
 }
 
 export default Board

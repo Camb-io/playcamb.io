@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CurrentPlayerControls = () => {
+const Controls = () => {
 
   return (
-    <div className="current-player-controls">
+    <div className="player-controls">
       <button>cambio</button>
       <button>cancel</button>
       <button>confirm</button>
@@ -12,4 +12,4 @@ const CurrentPlayerControls = () => {
 
 }
 
-export default CurrentPlayerControls;
+export default Controls;
